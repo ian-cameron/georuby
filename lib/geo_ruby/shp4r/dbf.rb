@@ -21,8 +21,12 @@ module GeoRuby
       end
 
       class Field < Column::Base
+        attr_accessor :name, :type, :length, :decimal
         def initialize(name, type, length, decimal = 0, version = 1, enc = nil)
-          super(name, type, length, decimal, version, enc)
+          @name = name
+          @type = type
+          @length = length
+          @decimal = decimal
         end
       end
 
